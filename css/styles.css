@@ -378,9 +378,11 @@ input[type="checkbox"] {
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.025);
 }
 
+/* nav bar edit by trz */
 .navbar .navbar-brand {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
+  margin-right: 2.25rem;
 }
 
 .navbar .logo-image img {
@@ -424,6 +426,8 @@ input[type="checkbox"] {
   margin-bottom: 0.5rem;
 }
 
+/* navigation barr */
+
 .navbar .nav-item .nav-link {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
@@ -435,10 +439,69 @@ input[type="checkbox"] {
 .navbar .nav-item.dropdown.show .nav-link,
 .navbar .nav-item .nav-link:hover,
 .navbar .nav-item .nav-link.active {
-  color: #9c9ead;
+  color: #b4b4bb;
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-duration: 0.6s;
 }
 
+/* !!!!!!!! */
+.main-menu .ml-auto {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.main-menu ul li {
+  position: relative;
+  margin-right: 1px;
+  padding-bottom: 2px;
+  align-items: center;
+}
+
+/* bottom */
+
+.main-menu ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: right center;
+}
+
+ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-duration: 0.6s;
+}
+
+/* !!!!!1!!!!!!!! */
+
 /* Dropdown Menu */
+
+.navbar .dropdown {
+  border: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #0b36a8;
+  margin-left: 34rem;
+  transition: all 0.5s;
+  border-radius: 5%;
+}
+
+.navbar .dropdown:hover {
+  padding-top: 0.5px;
+  padding-bottom: 0.5px;
+  background: transparent;
+  border: 0.5px solid #ffffff;
+  color: #ffffff;
+}
+
 .navbar .dropdown .dropdown-menu {
   animation: fadeDropdown 0.2s; /* required for the fade animation */
 }
@@ -513,7 +576,6 @@ input[type="checkbox"] {
   border: none;
   font-size: 1.25rem;
 }
-
 /******************/
 /*     Header     */
 /******************/
@@ -620,6 +682,9 @@ input[type="checkbox"] {
 /*******************/
 /*     Details     */
 /*******************/
+.detail-section {
+}
+
 .split .area-1 {
   display: inline-block;
   height: 430px;
@@ -1061,6 +1126,102 @@ a:hover.back-to-top {
     padding-right: 2.125rem;
     padding-left: 2.125rem;
   }
+
+  .card {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+  }
+
+  .card .face.face1 {
+    position: relative;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    transform: translateY(100px);
+  }
+
+  .card:hover .face.face1 {
+    background: #24262a;
+    transform: translateY(0);
+  }
+  .card:hover .face.face1 h4 {
+    color: #ffffff;
+    transform: translateY(0);
+  }
+  .card:hover .face.face1 i {
+    color: #ffffff;
+    width: 100%;
+    transform: translateY(0);
+  }
+
+  .card .face.face1 .content {
+    transition: 0.5s;
+  }
+
+  .card:hover .face.face1 .content {
+    opacity: 1;
+  }
+
+  .card .face.face1 .content img {
+    max-width: 100px;
+  }
+
+  .card .face.face1 .content i {
+    align-self: center;
+  }
+
+  .card .face.face1 .content h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+  }
+
+  .card:hover .face.face2 {
+    transform: translateY(0);
+  }
+
+  .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .card .face.face2 .content a {
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+  }
+
+  .card .face.face2 .content a:hover {
+    background: #333;
+    color: #fff;
+  }
   /* end of services */
 
   /* Extra Pages */
@@ -1143,6 +1304,11 @@ a:hover.back-to-top {
     margin-left: 0.5rem;
   }
 
+  .navbar .social-icons::before {
+    margin-left: 0.5rem;
+    color: #b4b4bb;
+  }
+
   .navbar .fa-stack {
     margin-right: 0;
     margin-left: 0.25rem;
@@ -1164,7 +1330,7 @@ a:hover.back-to-top {
 
   .split .area-1 {
     height: 100%;
-    width: 50%;
+    width: 40%;
     display: inline-block;
   }
 
